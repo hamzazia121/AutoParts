@@ -1,0 +1,288 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblItem>
+
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="./assets/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Shop Left Sidebar</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+<!--== Start Page Content Wrapper ==-->
+<div class="page-content-wrapper sp-y">
+    <div class="container container-wide">
+        <div class="row">
+            <div class="col-lg-3 order-1 order-lg-0">
+                <div class="sidebar-area">
+                    <div class="sidebar-item">
+                        <h4 class="sidebar-title">Filter By Color</h4>
+                        <div class="sidebar-body">
+                            <ul class="sidebar-list">
+                                <li><a href="#">Black <span>(2)</span></a></li>
+                                <li><a href="#">Blue <span>(3)</span></a></li>
+                                <li><a href="#">Green <span>(6)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <h4 class="sidebar-title">Recent Products</h4>
+                        <div class="sidebar-body">
+                            <div class="sidebar-product">
+                                <a href="single-product.html" class="image"><img src="./assets/img/product/product-1.png" alt="product" /></a>
+                                <div class="content">
+                                    <a href="single-product.html" class="title">Injected humour</a>
+                                    <span class="price">$799.99</span>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-product">
+                                <a href="single-product.html" class="image"><img src="./assets/img/product/product-2.png" alt="product" /></a>
+                                <div class="content">
+                                    <a href="single-product.html" class="title">Classical literature</a>
+                                    <span class="price">$599.99 <span class="old">$799.99</span></span>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-product">
+                                <a href="single-product.html" class="image"><img src="./assets/img/product/product-3.png" alt="product" /></a>
+                                <div class="content">
+                                    <a href="single-product.html" class="title">Classical literature</a>
+                                    <span class="price">$649.99 <span class="old">$799.99</span></span>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <h4 class="sidebar-title">Product categories</h4>
+                        <div class="sidebar-body">
+                            <ul class="sidebar-list">
+                                <li><a href="#">All Product</a></li>
+                                <li><a href="#">Best Seller</a></li>
+                                <li><a href="#">Car</a></li>
+                                <li><a href="#">Parts</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">Tayer</a></li>
+                                <li><a href="#">Uncategorized</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <h4 class="sidebar-title">Product tags</h4>
+                        <div class="sidebar-body">
+                            <ul class="tags">
+                                <li><a href="#">Car</a></li>
+                                <li><a href="#">Parts</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">Tayer</a></li>
+                                <li><a href="#">Seat</a></li>
+                                <li><a href="#">Engine</a></li>
+                                <li><a href="#">Parts</a></li>
+                                <li><a href="#">Fuel</a></li>
+                                <li><a href="#">Modern</a></li>
+                                <li><a href="#">Brake</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 order-0 order-lg-1">
+                <div class="action-bar-inner mb-30">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <div class="shop-layout-switcher mb-15 mb-sm-0">
+                                <ul class="layout-switcher nav">
+                                    <li data-layout="grid" class="active"><i class="fa fa-th"></i></li>
+                                    <li data-layout="list"><i class="fa fa-th-list"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="sort-by-wrapper">
+                                <label for="sort" class="sr-only">Sort By</label>
+                                <select name="sort" id="sort">
+                                    <option value="sbp">Sort By Popularity</option>
+                                    <option value="sbn">Sort By Newest</option>
+                                    <option value="sbt">Sort By Trending</option>
+                                    <option value="sbr">Sort By Rating</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-wrapper product-layout layout-grid">
+                    <div class="row mtn-30">
+                        <!-- Start Product Item -->
+                               @foreach (var item in Model)
+                        {
+                        <div class="col-sm-6 col-lg-4">
+                        <div class="product-item">
+                        <!-- Product Thumbnail -->
+                        <div class="product-item__thumb">
+                        <a href="itemDetail?id=@item.ItemId">
+                        <img class="thumb-primary" src="@item.TblItemImages.FirstOrDefault(x=>x.IsDefault).NormalImage" alt="Product" />
+                        </a>
+                        <!-- Product Rating -->
+                        <div class="ratting">
+                        <span><i class="ion-android-star"></i></span>
+                        <span><i class="ion-android-star"></i></span>
+                        <span><i class="ion-android-star"></i></span>
+                        <span><i class="ion-android-star"></i></span>
+                        <span><i class="ion-android-star-half"></i></span>
+                        </div>
+                        </div>
+
+                        <!-- Product Content -->
+                        <div class="product-item__content">
+                        <!-- Product Info -->
+                        <div class="product-item__info">
+                        <h4 class="title"><a href="single-product.html?id=@item.ItemId">@item.ItemName</a></h4>
+                        <span class="price"><strong>Price:</strong> @item.ItemPrice  </span>
+                        </div>
+                        <!-- Product Actions -->
+                        <div class="product-item__action">
+                                            <button class="btn-add-to-cart addToCart" data-item-id=" @item.ItemId"><i class="ion-bag"></i></button>
+                                            <button class="btn-add-to-cart "><i class="ion-ios-loop-strong"></i></button>
+                                            <button class="btn-add-to-cart addToWishList" data-item-id=" @item.ItemId"><i class="ion-ios-heart-outline"></i></button>
+                        <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-item__desc">
+                        <p>@item.LongDescription</p>
+                        </div>
+                        </div>
+
+                        <!-- Product Sale Badge -->
+                        @if (item.Discount.HasValue)
+                        {
+                        <div class="product-item__sale">
+                        <span class="sale-txt">@item.Discount</span>
+                        </div>
+                        }
+                        </div>
+                        </div>
+                        }
+                       
+                    </div>
+                </div>
+
+                <div class="action-bar-inner mt-30">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <nav class="pagination-wrap mb-10 mb-sm-0">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><i class="ion-ios-arrow-thin-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="col-sm-6 text-center text-sm-end">
+                            <p>Showing 1–12 of 26 results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Content Wrapper ==-->
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+          
+          
+            $('.addToCart').on('click', function (e) {
+                e.preventDefault();
+                var itemId = $(this).data('item-id'); // Get the item ID from the model
+                var quantity = 1 // Get the quantity from the input
+                $.ajax({
+                    type: 'POST',
+                    url: '/addToCart',
+                    data: { itemId: itemId, quantity: quantity },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            LoadCartData();// Show success message
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error occurred while adding item to cart');
+                    }
+                });
+            });
+
+            $('.addToWishList').on('click', function (e) {
+                e.preventDefault();
+                var itemId = $(this).data('item-id'); // Get the item ID from the model
+                var quantity = 1;
+                $.ajax({
+                    type: 'POST',
+                    url: "/addToWishList",
+                    data: { itemId: itemId, quantity: quantity },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                         
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error occurred while adding item to cart');
+                    }
+                });
+            });
+        
+        });
+
+    </script>
+}

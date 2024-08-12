@@ -1,0 +1,309 @@
+﻿@model AutoPartsHub.Models.CheckoutViewModel
+@{
+    ViewData["Title"] = "checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="page-header-wrap bg-img" data-bg="/assets/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Checkout</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a asp-controller="Home" asp-action="Shop">Shop</a></li>
+                            <li class="current"><a href="#">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+<!--== Start Page Content Wrapper ==-->
+<div class="page-content-wrapper sp-y">
+    <div class="cart-page-content-wrap">
+        <div class="container container-wide">
+          
+                <div class="woocommerce-form-login-toggle">
+                    <div class="woocommerce-info">If you are returning customer? Then <a class="showlogin" data-bs-toggle="modal" id="btnLoginModal" data-bs-target="#staticBackdrop">Click here to Login</a></div>
+                </div>
+       
+
+        
+
+            
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Checkout Form Area Start -->
+                    <div class="checkout-billing-details-wrap">
+                        <h2>Billing Details</h2>
+                        <div class="billing-form-wrap">
+                            <form asp-controller="Home" asp-action="Checkout" method="post">
+                                <input asp-for="TblOrdersMain.UserId" type="hidden" />
+
+
+                                <div class="col-md-12">
+                                    <div class="input-item mt-0">
+                                        <label for="f_name" class="sr-only required">First Name</label>
+                                        <input type="text" asp-for="TblOrdersMain.User.UserName" id="f_name" placeholder="First Name" required />
+                                    </div>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="email" class="sr-only required">Email Address</label>
+                                    <input type="email" asp-for="TblOrdersMain.Email" id="email" placeholder="Email Address" required />
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="phone" class="sr-only">Phone</label>
+                                    <input type="text" asp-for="TblOrdersMain.PhoneNo" id="phone" placeholder="Phone" />
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <label asp-for="TblOrdersMain.CountryId" class="sr-only required">Country</label>
+                                    <select asp-for="TblOrdersMain.CountryId" asp-items="ViewBag.CountryId">
+                                        <option>&nbsp;&nbsp;&nbsp; ----- Select Country -----</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <label asp-for="TblOrdersMain.ProvinceId" class="sr-only required">Provice</label>
+                                    <select asp-for="TblOrdersMain.ProvinceId" asp-items="ViewBag.ProvinceId">
+                                        <option>&nbsp;&nbsp;&nbsp; ----- Select Province -----</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <label asp-for="TblOrdersMain.CityId" class="sr-only required">City</label>
+                                    <select asp-for="TblOrdersMain.CityId" asp-items="ViewBag.CityId">
+                                        <option>&nbsp;&nbsp;&nbsp; ----- Select City -----</option>
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label for="street-address" class="sr-only required">Street address</label>
+                                    <input type="text" asp-for="TblOrdersMain.DeliveryAddress" id="street-address" placeholder="Street address Line 1" required />
+                                </div>
+
+
+
+                                <div class="input-item">
+                                    <label for="postcode" class="sr-only required">Postcode / ZIP</label>
+                                    <input type="text" asp-for="TblOrdersMain.PostelCode" id="postcode" placeholder="Postcode / ZIP" required />
+                                </div>
+
+
+                                <div class="row mt-5 mb-5">
+                                    <div class="col-sm-12 mb-3 ">
+                                        Payment Type
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" asp-for="TblOrdersMain.PaymentType" asp-formaction="PaymentType" id="exampleRadios1" value="cash" checked>
+                                            <label class="form-check-label " for="exampleRadios1">
+                                                <img src="/Images/cash-on-delivery.png" class="w-25" /> Cash On Delivery
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn btn-brand d-block"  type="submit">Place order</button>
+
+                            </form>
+                        </div>
+
+                   
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-5 ml-auto">
+                    <!-- Checkout Page Order Details -->
+                    <div class="order-details-area-wrap">
+                        <h2>Your Order</h2>
+
+                        <div class="order-details-table table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Products</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        decimal? subtotal = 0;
+                                        if (Model != null && Model.TblItems != null)
+                                        {
+                                            foreach (var item in Model.TblItems)
+                                            {
+                                                subtotal += item.ItemPrice * item.Quantity;
+                                            }
+                                        }
+                                    }
+
+                                    @if (Model != null && Model.TblItems != null && Model.TblItems.Any())
+                                    {
+                                        foreach (var item in Model.TblItems)
+                                        {
+                                            <tr class="cart-item">
+                                                <td>
+                                                    <span class="product-title">@item.ItemName</span>
+                                                    <span class="product-quantity">&#215; @item.Quantity</span>
+                                                </td>
+                                                <td>@item.ItemPrice</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="2">No items found.</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <th>Subtotal</th>
+                                        <td><span id="cart-subtotal">@subtotal</span></td>
+                                    </tr>
+                                    <tr class="shipping">
+                                        <th>Shipping</th>
+                                        <td>
+                                            <ul class="shipping-method">
+                                                <li></li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" id="flat_shipping" name="shipping_method" class="form-check-input shipping-cost" value="flat" checked />
+                                                        <label class="form-check-label" for="flat_shipping">Shipping : 500</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="order-total">
+                                        <th>Total</th>
+                                        <td><b><span id="cart-total">@subtotal</span></b></td>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+
+                        <div class="order-details-footer">
+                            <p>
+                                Your personal data will be used to process your order, support your experience throughout
+                                this website, and for other purposes described in our
+                                <a href="#" class="text-warning">privacy policy</a>.
+                            </p>
+                            <div class="form-check mt-10">
+                                <input type="checkbox" id="privacy" class="form-check-input" required />
+                                <label for="privacy" class="form-check-label">I have read and agree to the website terms and conditions</label>
+                            </div>
+
+                           @*  @if (!User.Identity.IsAuthenticated)
+                            {
+
+                                <button class="btn btn-bordered mt-40" disabled>Place Order</button>
+
+                            }
+                            else
+                            {
+
+                            } *@
+                            @* <button class="btn btn-brand d-block" id="checkout-forms " type="submit">Place order</button> *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="LoginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CreateModalHeader">User Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            @await Html.PartialAsync("/Views/Authentication/_Login.cshtml", new Login())
+
+
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" id="RegisterationModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CreateModalHeader">User Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            @await Html.PartialAsync("/Views/Authentication/_Registeration.cshtml", new Registeration())
+
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Update total amount based on shipping method selection
+      
+                function updateTotal() {
+                    var shippingMethod = $('input[name="shipping_method"]:checked').val();
+                    var subtotal = parseFloat($('#cart-subtotal').text().replace('$', '').trim());
+                    var shippingCost = shippingMethod === 'flat' ? 500 : 0; // Flat rate is 100 rupees
+
+                    var total = subtotal + shippingCost;
+                    $('#cart-total').text('' + total.toFixed(2));
+                }
+
+                // Trigger the update on page load
+                updateTotal();
+
+                // Update total amount when the shipping method selection changes
+                $('input[name="shipping_method"]').on('change', function () {
+                    updateTotal();
+                });
+      
+
+
+            // Show login modal on button click
+            $("#btnLoginModal").click(function () {
+                $("#LoginModal").modal("show");
+            });
+
+            // Conditionally show the login modal if ViewBag.ShowLoginModal is true
+        @if (ViewBag.ShowLoginModal != null && (bool)ViewBag.ShowLoginModal)
+        {
+            <text>
+                    $("#LoginModal").modal("show");
+            </text>
+        }
+                @if (ViewBag.ShowRegisterationModal != null && (bool)ViewBag.ShowRegisterationModal)
+    {
+        <text>
+                $("#RegisterationModal").modal("show");
+        </text>
+            }
+       
+                });
+    </script>
+}

@@ -1,0 +1,109 @@
+﻿@model AutoPartsHub.Models.TblItem
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemSlugs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ItemSlugs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ItemPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsFeature)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsFeature)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sku)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sku)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DefaultImageUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DefaultImageUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LongDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MDelete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MDelete)
+      @*   </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Brand.BrandId)
+        </dd> *@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ItemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,126 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblItem>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme">
+                <h4 class="card-title text-white">Items</h4>
+                <button type="button" class="btn bg-white" id="CreateUser">
+
+                    <a asp-action="Create" class="text-theme" style="color:#fff">Create New</a>
+                </button>
+
+            </div>
+
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Images</th>
+                                <th>
+                                @Html.DisplayNameFor(model => model.ItemSlugs)
+                                </th>
+
+                                <th>
+                                    Item Name
+                                </th>
+                                <th>
+                                    Item Price
+                                </th>
+                                <th>
+                                    Discount
+                                </th>
+                                <th>
+                                    IsFeature
+                                </th>
+                                <th>
+                                    Sku
+                                </th>
+
+                                <th>
+                                    Short Description
+                                </th>
+                                <th>
+                                    Long Description
+                                </th>
+
+                                <th>
+                                    Brand
+                                </th>
+
+                                <th>
+                                     Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                        <td>
+                                            <img src="@Html.DisplayFor(modelItem => item.TblItemImages.FirstOrDefault(x=>x.IsDefault).NormalImage)" alt="ItemImage" class="w-100 img-responsive" />
+                                        </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ItemSlugs)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ItemName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ItemPrice)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Discount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsFeature)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sku)
+                                    </td>
+                                    
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LongDescription)
+                                    </td>
+
+
+                                    <td>
+                                     
+                                            @Html.DisplayFor(modelItem => item.Brand.BrandName)
+                                      
+                                    </td>
+                                    <td style="display:flex;margin-left:20px !important">
+                                        <a asp-action="ProductImages" class="btn btn-sm m-2 btn-warning" asp-route-id="@item.ItemId"><i class="fa fa-file "></i></a>
+
+                                        <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.ItemId"><i class="fa fa-edit"></i></a>
+
+                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                            <input type="hidden" name="id" value="@item.ItemId" asp-for="@item.ItemId" />
+                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

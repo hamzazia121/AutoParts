@@ -1,0 +1,85 @@
+﻿@model AutoPartsHub.Models.TblVoucherCode
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblVoucherCode</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VoucherText)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VoucherText)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VoucherDiscount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VoucherDiscount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ispercentage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ispercentage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsUsed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsUsed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsExpired)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsExpired)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VoucherExpireDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VoucherExpireDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UpadetedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UpadetedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mdelete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mdelete)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.VoucherId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

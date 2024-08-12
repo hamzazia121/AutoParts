@@ -1,0 +1,109 @@
+﻿@model AutoPartsHub.Models.TblItem
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Add Item</h4>
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="form-validation">
+
+
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <!-- View -->
+                            <div class="col-md-6 mt-4">
+                                <label class="control-label">Images</label>
+                                <input name="ImageFiles" type="file" class="form-control" multiple />
+                                <span class="text-danger"></span>
+                            </div>
+                          @*   <div class="col-md-6">
+                                <label asp-for="ItemSlugs" class="control-label">Item Slugs</label>
+                                <input asp-for="ItemSlugs" class="form-control" />
+                                <span asp-validation-for="ItemSlugs" class="text-danger"></span>
+                            </div> *@
+                            <div class="col-md-6">
+                                <label asp-for="ItemName" class="control-label">Item Name</label>
+                                <input asp-for="ItemName" class="form-control" />
+                                <span asp-validation-for="ItemName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="ItemPrice" class="control-label">Item Price</label>
+                                <input asp-for="ItemPrice" class="form-control" />
+                                <span asp-validation-for="ItemPrice" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="Discount" class="control-label"></label>
+                                <input asp-for="Discount" class="form-control" />
+                                <span asp-validation-for="Discount" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4 form-check form-switch d-flex flex-column">
+                                <label asp-for="IsFeature" class="control-label">Is Feature</label>
+                                <input asp-for="IsFeature" type="checkbox" role="switch" class="form-check-input" />
+                                <span asp-validation-for="IsFeature" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="BrandId" class="control-label">Brand Id</label>
+                                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="Sku" class="control-label"></label>
+                                <input asp-for="Sku" class="form-control" />
+                                <span asp-validation-for="Sku" class="text-danger"></span>
+                            </div>
+                            @*    <div class="col-md-6 mt-4">
+                            <label asp-for="DefaultImageFile" class="control-label">Default Image Url</label>
+                            <input asp-for="DefaultImageFile" type="file" class="form-control" />
+                            <span asp-validation-for="DefaultImageFile" class="text-danger"></span>
+                            </div> *@
+
+
+
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="ShortDescription" class="control-label">Short Description</label>
+                                <input asp-for="ShortDescription" class="form-control" />
+                                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="LongDescription" class="control-label">Long Description</label>
+                                <input asp-for="LongDescription" class="form-control" />
+                                <span asp-validation-for="LongDescription" class="text-danger"></span>
+
+
+
+
+                                <div class="col-md-12 mt-4 ">
+
+
+                                    <input type="submit" value="Create" class="btn btn-success btnf-r " />
+                                    <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:4px !important">Back to List</a>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

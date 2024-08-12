@@ -1,0 +1,76 @@
+﻿@model AutoPartsHub.Models.TblItemImage
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Add Item Image</h4>
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="form-validation">
+
+
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ItemImageId" />
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="ItemImageName" class="control-label">Item Image Name</label>
+                                <input asp-for="ItemImageName" class="form-control" />
+                                <span asp-validation-for="ItemImageName" class="text-danger"></span>
+                            </div>
+                       
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="IsDefault" class="control-label">Is Default</label>
+                                <input asp-for="IsDefault" class="form-control" />
+                                <span asp-validation-for="IsDefault" class="text-danger"></span>
+                            </div>   
+                         
+                       @*      <div class="col-md-6 mt-4">
+                                <label asp-for="ItemId" class="control-label">Item Id</label>
+                                <select asp-for="ItemId" class="form-control" asp-items="ViewBag.ItemId"></select>
+                                <span asp-validation-for="ItemId" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="BanerImage" class="control-label">Baner Image</label>
+                                <input asp-for="BanerImage" class="form-control" />
+                                <span asp-validation-for="BanerImage" class="text-danger"></span>
+                            </div> *@
+@*                             <div class="form-group">
+                                <div class="col-md-12 mt-4">
+                                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-left:2px !important">Back to List</a> *@
+
+                            <div class="form-group row">
+                                <div class="col-md-12 mt-4">
+                                    <input type="submit" value="Save" class="btn btn-success btnf-r " />
+                                    <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:2px !important">Back to List</a>
+
+                            </div>
+                        </div>
+</div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+

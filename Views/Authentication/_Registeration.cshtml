@@ -1,0 +1,62 @@
+﻿@model AutoPartsHub.Models.Registeration
+
+<div class="login-form-style">
+    <div class="site-logo text-center text-sm-start m-4 mb-5">
+        <a href="/Authentication/Login"><img src="/assets/img/AutoLogo.png" class="ml-auto mr-auto" alt="Logo" /></a>
+    </div>
+
+    <form asp-controller="Authentication" asp-action="Registeration" method="post">
+        <div>
+            <input asp-for="Username" placeholder="UserName">
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Email" placeholder="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="PhoneNumber" placeholder="Phone No" type="text">
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Password" placeholder="Password" type="password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="login-toggle-btn">
+            <input id="login-check" type="checkbox">
+            <label for="login-check">Remember me</label>
+        </div>
+        <div class="login-btn">
+            <button id="registrationForm" type="submit">Sign up</button>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $('#registrationForm').submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Registration", "Authentication")',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            location.reload(); // Refresh the page
+                        } else {
+                            $('#registrationError').text(response.message);
+                        }
+                    }
+                });
+            });
+        
+            });
+
+    </script>
+}
+
+}

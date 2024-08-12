@@ -1,0 +1,121 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblBrand>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme ">
+                <h4 class="card-title text-white">Brands</h4>
+                <button type="button" class="btn bg-white" id="CreateUser">
+
+                    <a asp-action="Create" class=" text-theme" style="color:#fff" >Create New</a>
+                </button>
+
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>
+
+                                    Brand Image
+                                </th>
+
+                                <th>
+
+                                    Brand Name
+                                </th>
+                                <th>
+
+                                    Brand Title
+                                </th>
+                                <th>
+
+                                    Brand ShortName
+                                </th>
+                                <th>
+
+                                    Brand Description
+
+                                </th>
+
+                             
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src=" @Html.DisplayFor(modelItem => item.BrandImage)" alt="brandImg" class="w-100 img-responsive" />
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BrandName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BrandTitle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BrandShortName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BrandDescription)
+                                    </td>
+                                   
+
+                                    <td style="display: flex;margin-left: -30px !important;">
+                                        <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.BrandId"><i class="fa fa-edit "></i></a>
+                                        @*      <a asp-action="Details" class="btn  btn-square btn-warning" asp-route-id="@item.BrandId">
+                                    <i class="fa fa-info-circle " aria-hidden="true"></i>
+                                    </a> *@
+                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                            <input type="hidden" name="id" value="@item.BrandId" asp-for="@item.BrandId" />
+                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                        </form>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <script>
+        $('.deleteForm').submit(function (event) {
+       var form = this;
+       event.preventDefault();
+       Swal.fire({
+           title: "Are you sure?",
+           text: "You won't be able to revert this!",
+           icon: "warning",
+           showCancelButton: true,
+           confirmButtonColor: "#3085d6",
+           cancelButtonColor: "#d33",
+           confirmButtonText: "Yes, delete it!"
+       }).then((result) => {
+           if (result.isConfirmed) {
+             form.submit();
+               // If user confirms, form submission proceeds as usual
+           } else {
+               event.preventDefault();
+           }
+       });
+   });
+
+
+ </script>

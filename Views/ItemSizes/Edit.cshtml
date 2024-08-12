@@ -1,0 +1,72 @@
+﻿@model AutoPartsHub.Models.TblItemSize
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Edit Items</h3>
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="form-validation">
+
+
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ItemSizeId" />
+                        <div class="form-group row">
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="ItemId" class="control-label">Item</label>
+                                <select asp-for="ItemId" class="form-control" asp-items="ViewBag.ItemId">
+                                    <option>----- Select Item -----</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="SizeId" class="control-label">Size</label>
+                                <select asp-for="SizeId" class="form-control" asp-items="ViewBag.SizeId"></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="SizePrice" class="control-label">Size Price</label>
+                                <input asp-for="SizePrice" class="form-control" />
+                                <span asp-validation-for="SizePrice" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4 form-check form-switch d-flex flex-column">
+                                <label asp-for="IsDefault" class="control-label">Is Default</label>
+                                <input asp-for="IsDefault" type="checkbox" role="switch" class="form-check-input" style="margin-left=1rem" />
+                                <span asp-validation-for="IsDefault" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="col-md-12 mt-4 ">
+
+
+                                <input type="submit" value="Create" class="btn btn-success btnf-r " />
+                                <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:4px !important">Back to List</a>
+
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,184 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblItem>
+@{
+    ViewData["Title"] = "cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/assets/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Shopping Cart</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="Shop">Shop</a></li>
+                            <li class="current"><a href="#">Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+<!--== Start Page Content Wrapper ==-->
+<div class="page-content-wrapper sp-y">
+    <div class="cart-page-content-wrap">
+        <div class="container container-wide">
+            
+            <div class="row m-3">
+                <div class="col-sm-12">
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMsg))
+                    {
+                        <div class="alert alert-danger">
+                            @ViewBag.ErrorMsg
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(ViewBag.SuccessMsg))
+                    {
+                        <div class="alert alert-success">
+                            @ViewBag.SuccessMsg
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping-cart-list-area">
+                        <div class="shopping-cart-table table-responsive">
+                            <table class="table table-bordered text-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Products</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <form asp-action="DeleteFromCart" method="post" class="deleteForm">
+                                                            <input type="hidden" name="id" value="@item.ItemId" asp-for="@item.ItemId" />
+                                                            <button type="submit" class="btn-sm"><i class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </div>
+                                                    <a asp-asp-controller="Home" asp-action="ItemDetail" class="product-thumb">
+                                                        <img src="@item.TblItemImages.FirstOrDefault(img => img.IsDefault).NormalImage" alt="Product" />
+                                                    </a>
+                                                    <a asp-asp-controller="Home" data-item-id="@item.ItemId" asp-action="ItemDetail" class="product-name">
+                                              
+                                                        @item.ItemName
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$@item.ItemPrice</span>
+                                            </td>
+                                            <td class="quantity">
+                                                <div class="pro-qty mr-3 mb-4 mb-sm-0">
+                                                    <label for="quantity" class="sr-only">Quantity</label>
+                                                    <input type="text" id="quantity" min="1" title="Quantity" value="@item.Quantity" />
+                                                </div>
+                                               
+                                            </td>
+                                            <td>
+                                                <span class="price item-total" data-total-amount="@item.">$@item.TotalPrice</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cart-coupon-update-area d-sm-flex justify-content-between align-items-center">
+                            <div class="coupon-form-wrap">
+                                <form action="#" method="post">
+                                    <label for="coupon" class="sr-only">Coupon Code</label>
+                                    <input type="text" id="coupon" placeholder="Coupon Code" />
+                                    <button class="btn-apply">Apply Button</button>
+                                </form>
+                            </div>
+                            <div class="cart-update-buttons mt-15 mt-sm-0">
+                                <button class="btn-clear-cart">Clear Cart</button>
+                                <button class="btn-update-cart">Update Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Cart Calculate Area -->
+                    <div class="cart-calculate-area mt-sm-40 mt-md-60">
+                        <h5 class="cal-title">Cart Totals</h5>
+                        <div class="cart-cal-table table-responsive">
+                            <table class="table table-borderless">
+                                <tr class="cart-sub-total">
+                                    <th>Subtotal</th>
+                                    <td><span id="cart-subtotal">@Model.Sum(item => item.TotalPrice)</span></td>
+                                </tr>
+                                <tr class="shipping">
+                                    <th>Shipping</th>
+                                    <td>
+                                        <ul class="shipping-method">
+                                            <li></li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input type="radio" id="flat_shipping" name="shipping_method" class="form-check-input shipping-cost" value="flat" checked />
+                                                    <label class="form-check-label" for="flat_shipping">Shipping : 500</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr class="order-total">
+                                    <th>Total</th>
+                                    <td><b><span id="cart-total">@Model.Sum(item => item.TotalPrice)</span></b></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="proceed-checkout-btn">
+                            <a asp-controller="Home" asp-action="Checkout"  class="btn btn-brand d-block">Proceed to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Content Wrapper ==-->
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            function updateTotal() {
+                var shippingMethod = $('input[name="shipping_method"]:checked').val();
+                var subtotal = parseFloat($('#cart-subtotal').text().replace('$', '').trim());
+                var shippingCost = shippingMethod === 'flat' ? 500 : 0; // Flat rate is 100 rupees
+
+                var total = subtotal + shippingCost;
+                $('#cart-total').text('' + total.toFixed(2));
+            }
+
+            // Trigger the update on page load
+            updateTotal();
+
+            // Update total amount when the shipping method selection changes
+            $('input[name="shipping_method"]').on('change', function () {
+                updateTotal();
+            });
+        });
+
+     
+    </script>
+}

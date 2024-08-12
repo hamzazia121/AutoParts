@@ -1,0 +1,92 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblVoucherCode>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme">
+                <h4 class="card-title text-white">VoucherCode</h4>
+                <button type="button" class="btn bg-white" id="CreateUser">
+
+                    <a asp-action="Create" class="text-theme" style="color:#fff">Create New</a>
+                </button>
+
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+
+
+    <thead>
+        <tr>
+            <th>
+                                    Voucher Text
+            </th>
+            <th>
+                                    Voucher Discount
+            </th>
+            <th>
+                                    Is percentage
+            </th>
+            <th>
+                                    Is Used
+            </th>
+            <th>
+                                    Is Expired
+            </th>
+            <th>
+                                    Voucher Expire Date
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoucherText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoucherDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ispercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsUsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsExpired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoucherExpireDate)
+            </td>
+            <td style="display:flex;margin-inline:0px !important">
+                <a asp-action="Edit"  class="btn btn-sm m-2 btn-primary" asp-route-id="@item.VoucherId"><i class="fa fa-edit"></i></a> 
+                
+                                            <form asp-action="Delete" class="deleteForm">
+                                    <input type="hidden" name="id" value="@item.VoucherId" asp-for="@item.VoucherId" />
+                                    <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                    </form>
+
+
+                                    </td>
+        </tr>
+}
+    </tbody>
+</table>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>

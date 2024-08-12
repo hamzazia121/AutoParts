@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblSize>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme">
+                <h4 class="card-title text-white">Item Sizes</h4>
+                <button type="button" class="btn bg-white" id="CreateUser">
+                    <a asp-action="Create" class="text-theme" style="color:#fff">Create New</a>
+
+                </button>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Size Name
+                                </th>
+                            
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SizeName)
+                                    </td>
+                            
+                                    <td style="display:flex;margin-left: -10px !important ">
+                                        <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.SizeId"><i class="fa fa-edit"></i></a>
+                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                            <input type="hidden" name="id" value="@item.SizeId" asp-for="@item.SizeId" />
+                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model AutoPartsHub.Models.TblBrand
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Add Brand</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-validation">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="BrandName" class="control-label"> Brand Name</label>
+                                <input asp-for="BrandName" class="form-control" />
+                                <span asp-validation-for="BrandName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="BrandTitle" class="control-label">Brand Title</label>
+                                <input asp-for="BrandTitle" class="form-control" />
+                                <span asp-validation-for="BrandTitle" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="BrandShortName" class="control-label">Brand Short Name</label>
+                                <input asp-for="BrandShortName" class="form-control" />
+                                <span asp-validation-for="BrandShortName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="BrandDescription" class="control-label">Brand Description</label>
+                                <input asp-for="BrandDescription" class="form-control" />
+                                <span asp-validation-for="BrandDescription" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label asp-for="BrandImageFile" class="control-label">Brand Image</label>
+                                <input asp-for="BrandImageFile" type="file" class="form-control" />
+                                <span asp-validation-for="BrandImageFile" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <input type="submit" value="Create" class="btn btn-success btnf-r" />
+                                <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:4px !important">Back to List</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

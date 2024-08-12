@@ -1,0 +1,54 @@
+﻿@model AutoPartsHub.Models.TblRoll
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Edit Role</h4>
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="form-validation">
+
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RollId" />
+            <div class="form-group row">
+            <div class="col-md-6">
+                <label asp-for="RollName" class="control-label"></label>
+                <input asp-for="RollName" class="form-control" />
+                <span asp-validation-for="RollName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-md-6 mt-4">
+
+                <input type="submit" value="Save" class="btn btn-success btnf-r " />
+                 <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:2px !important">Back to List</a>
+
+            </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+

@@ -1,0 +1,148 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblUser>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme">
+                <h4 class="card-title text-white">Users</h4>
+                <button type="button" class="btn bg-white" id="CreateUser">
+                    
+                    <a asp-action="Create" class="text-theme" style="color:#fff">Create New</a>
+                    </button>
+           
+            </div>
+                
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>
+                                    User Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Phone Number
+                                </th>
+                                <th>
+                                    Password
+                                </th>
+                                <th>
+                                    Roll Name
+                                </th>
+                             <th>
+                                 Actions
+                             </th>
+                                
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Password)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Roll.RollName)
+                                    </td>
+                              @*       <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UpdatedBy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MDelete)
+                                    </td> *@
+
+
+                                    <td style="display: flex;margin-left: -30px !important;">
+
+                                        <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.UserId"><i class="fa fa-edit "></i></a>
+
+
+@*                                      
+ *@
+
+                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                            <input type="hidden" name="id" value="@item.UserId" asp-for="@item.UserId" />
+                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    </div>
+
+
+
+
+
+             @* Create Modal *@
+
+@*     <div class="modal fade bd-example-modal-lg" id="UserCreate" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="CreateModalHeader"> </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body" id="createUserPreview">
+                     @await Html.PartialAsync("/Views/Users/_Create.cshtml", new TblUser()) 
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+      
+            $("#CreateUser").click(function () {
+                    $("#UserCreate").modal("show")
+
+            });
+
+ 
+
+            
+    </script>
+} *@

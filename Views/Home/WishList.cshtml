@@ -1,0 +1,126 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblItem>
+
+@{
+    ViewData["Title"] = "WishList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header-wrap bg-img" data-bg="assets/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Wishlist</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li class="current"><a href="#">Wishlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+<!--== Start Page Content Wrapper ==-->
+<div class="page-content-wrapper sp-y">
+    <div class="wishlist-page-content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shopping-cart-list-area">
+                        <div class="shopping-cart-table table-responsive">
+                            <table class="table table-bordered text-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Products</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Cart</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach(var item in Model){
+
+                                    <tr>
+                                        <td class="product-list">
+                                            <div class="cart-product-item d-flex align-items-center">
+                                                <div class="remove-icon">
+                                                        <form asp-action="DeleteFromWishList" method="post" class="deleteForm">
+                                                            <input type="hidden" name="id" value="@item.ItemId" asp-for="@item.ItemId" />
+                                                            <button type="submit" class="btn-sm"><i class="fa fa-trash"></i></button>
+                                                        </form>
+                                                </div>
+                                                <a href="single-product.html" class="product-thumb">
+                                                        <img src="@item.TblItemImages.FirstOrDefault(img => img.IsDefault).NormalImage" alt="Product" />
+
+                                                </a>
+                                                <a href="single-product.html" class="product-name">
+                                                    Metallic cotton
+                                                    dress
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="price">@item.ItemPrice</span>
+                                        </td>
+                                        <td>
+                                                <div class="pro-qty mr-3 mb-4 mb-sm-0">
+                                                    <label for="quantity" class="sr-only">Quantity</label>
+                                                    <input type="text" id="quantity" title="Quantity" value="1" />
+                                                </div>
+                                        </td>
+                                        <td class="add-cart">
+                                                <button class="btn btn-bordered addToCart">Add to Cart</button>
+                                        </td>
+                                    </tr>
+                                    }
+
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+          
+          
+          
+            $('.addToCart').on('click', function (e) {
+                e.preventDefault();
+                var itemId = $(this).data('item-id');
+                var quantity = $('#quantity').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/addToCart',
+                    data: { itemId: itemId, quantity: quantity },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            LoadCartData();// Show success message
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error occurred while adding item to cart');
+                    }
+                });
+            });
+
+        });
+
+    </script>
+}

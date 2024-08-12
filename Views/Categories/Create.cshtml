@@ -1,0 +1,67 @@
+﻿@model AutoPartsHub.Models.TblCategory
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+
+</style>
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Add Category</h4>
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="form-validation">
+        <form asp-action="Create"enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                                <label asp-for="CategoryName" class="control-label">Category Name</label>
+                    <input asp-for="CategoryName" class="form-control" />
+                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                                <label asp-for="CategoryTitle" class="control-label">Category Tital</label>
+                                <input asp-for="CategoryTitle" class="form-control" />
+                                <span asp-validation-for="CategoryTitle" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mt-4">
+                                <label asp-for="CategoryDescription" class="control-label">Category Description</label>
+                    <input asp-for="CategoryDescription" class="form-control" />
+                    <span asp-validation-for="CategoryDescription" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mt-4">
+                                <label asp-for="CategoryImageFile" class="control-label">Category Image</label>
+                    <input asp-for="CategoryImageFile" class="form-control" />
+                    <span asp-validation-for="CategoryImageFile" class="text-danger"></span>
+                </div>
+            </div>
+                       
+
+                            <div class="col-md-12 mt-4">
+
+
+                            <input type="submit" value="Create" class="btn btn-success btnf-r" />
+                            <a asp-action="Index" class="btn btn-warning btnf-r" style="margin-right:4px !important">Back to List</a>
+                            </div>
+                         
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+

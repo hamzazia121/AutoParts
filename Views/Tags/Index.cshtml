@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AutoPartsHub.Models.TblTag>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header bg-theme">
+                <h4 class="card-title text-white">Tags</h4>
+                <button type="button" class="btn bg-white" id="CreateColor">
+
+                    <a asp-action="Create" class="text-theme" style="color:#fff" id="CreateRoll">Create New</a>
+                </button>
+
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+
+
+
+    <thead>
+        <tr>
+            <th>
+                                    Tag Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TagName)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td> *@
+            
+            <td style="display: flex;margin-left:-30px !important">
+                <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.TagId"><i class="fa fa-edit"></i></a> 
+                
+                                            <form asp-action="Delete" class="deleteForm">
+                                    <input type="hidden" name="id" value="@item.TagId" asp-for="@item.TagId" />
+                                    <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                    </form>
+
+
+                                    </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>

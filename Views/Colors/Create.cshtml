@@ -1,0 +1,47 @@
+﻿@model AutoPartsHub.Models.TblColor
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+<style>
+    .btnf-r {
+        float: right !important;
+    }
+</style>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Add Color</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-validation">
+
+                        <form asp-action="Create" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                <label asp-for="ColorName" class="control-label"></label>
+                <input asp-for="ColorName" class="form-control" />
+                <span asp-validation-for="ColorName" class="text-danger"></span>
+            </div>
+            </div>
+                             <div class="form-group row">
+                                <div class="col-md-6 mt-4">
+                <input type="submit" value="Create" class="btn btn-success btnf-r" />
+                                    <a asp-action="Index" class="btn btn-warning btnf-r">Back to List</a>
+
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+  
+
+
+
