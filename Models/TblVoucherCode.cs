@@ -11,11 +11,11 @@ public partial class TblVoucherCode
 
     public decimal VoucherDiscount { get; set; }
 
-    public bool? Ispercentage { get; set; }
+    public Boolean Ispercentage { get; set; }
 
-    public bool? IsUsed { get; set; }
+    public Boolean IsUsed { get; set; }
 
-    public bool? IsExpired { get; set; }
+    public Boolean IsExpired { get; set; }
 
     public DateTime? VoucherExpireDate { get; set; }
 

@@ -60,12 +60,12 @@
                                         <img src="@Html.DisplayFor(modelItem => item.NormalImage)" alt="DefaultImageFile" />
                                     </td>
 
-                                    <td style="display: flex;margin-inline-start:0px !important">
+                                    <td style="display: flex;justify-content:center; !important">
 
                                         <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.ItemImageId"><i class="fa fa-edit "></i></a>
-                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                        <form asp-action="Delete" method="post" class="deleteForm m-2">
                                             <input type="hidden" name="id" value="@item.ItemImageId" asp-for="@item.ItemImageId" />
-                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
         </tr>

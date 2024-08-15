@@ -9,7 +9,7 @@ public partial class TblShippingPolicy
 
     public decimal PolicyAmount { get; set; }
 
-    public bool? IsLifeTime { get; set; }
+    public Boolean IsLifeTime { get; set; }
 
     public DateTime? PolicyStatsDate { get; set; }
 

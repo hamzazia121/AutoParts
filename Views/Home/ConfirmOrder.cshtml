@@ -6,138 +6,137 @@
 
 <style>
 
-	.cardactive {
-		border: 3px solid #e7272d !important;
-	}
+    .cardactive {
+        border: 3px solid #e7272d !important;
+    }
 
-		.cardactive h5 {
-			color: #e7272d !important;
-		}
+        .cardactive h5 {
+            color: #e7272d !important;
+        }
 
-	.text-pink {
-		color: #e7272d !important;
-		font-size: large !important;
-		font-weight: bold !important;
-	}
+    .text-pink {
+        color: #e7272d !important;
+        font-size: large !important;
+        font-weight: bold !important;
+    }
 
-	.text-pink-h1 {
-		color: #e7272d !important;
-		font-size: 44px !important;
-		font-weight: bold !important;
-	}
+    .text-pink-h1 {
+        color: #e7272d !important;
+        font-size: 44px !important;
+        font-weight: bold !important;
+    }
 
-	.w-20 {
-		width: 20% !important;
-	}
+    .w-20 {
+        width: 20% !important;
+    }
 
-	.img-card-body {
-		width: 100% !important;
-		height: 100% !important;
-	}
+    .img-card-body {
+        width: 100% !important;
+        height: 100% !important;
+    }
 
-	.float-right {
-		float: right !important;
-	}
+    .float-right {
+        float: right !important;
+    }
 
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-	.countdown-container {
-		display: flex;
-	}
+    .countdown-container {
+        display: flex;
+    }
 
-	.big-text {
-		font-size: 4rem;
-		color: #e7272d !important;
-	}
+    .big-text {
+        font-size: 4rem;
+        color: #e7272d !important;
+    }
 
-	.title {
-		margin: 10px;
-		text-align: center;
-		color: #e7272d !important;
-		width: 100%;
-		letter-spacing: 2px;
-		font-size: 3rem;
-		line-height: 5.5rem;
-	}
+    .title {
+        margin: 10px;
+        text-align: center;
+        color: #e7272d !important;
+        width: 100%;
+        letter-spacing: 2px;
+        font-size: 3rem;
+        line-height: 5.5rem;
+    }
 
-		.title span {
-			display: block;
-			font-size: 6rem;
-			letter-spacing: 2rem;
-		}
+        .title span {
+            display: block;
+            font-size: 6rem;
+            letter-spacing: 2rem;
+        }
 
-	.wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-	.countdown-container > div {
-		margin: 0 2rem;
-		text-align: center;
-		border: 2px solid #fff;
-		padding: 0px 20px;
-		border-radius: 12px;
-		box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
-		box-sizing: border-box;
-		color: #fff;
-		min-width: 150px;
-	}
+    .countdown-container > div {
+        margin: 0 2rem;
+        text-align: center;
+        border: 2px solid #fff;
+        padding: 0px 20px;
+        border-radius: 12px;
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+        box-sizing: border-box;
+        color: #fff;
+        min-width: 150px;
+    }
 
-	@@media (max-width:992px) {
-		.countdown-container > div {
-			margin: 0 1rem;
-		}
-	}
+    @@media (max-width:992px) {
+        .countdown-container > div {
+            margin: 0 1rem;
+        }
+    }
 
-	@@media (max-width:767px) {
-		.countdown-container {
-			flex-wrap: wrap;
-		}
+    @@media (max-width:767px) {
+        .countdown-container {
+            flex-wrap: wrap;
+        }
 
-			.countdown-container > div {
-				margin: 1rem auto;
-				max-width: 150px;
-			}
+            .countdown-container > div {
+                margin: 1rem auto;
+                max-width: 150px;
+            }
 
-		.title-count {
-			font-size: 1.5rem;
-			line-height: 3.5rem;
-			margin: 10px 0px;
-		}
+        .title-count {
+            font-size: 1.5rem;
+            line-height: 3.5rem;
+            margin: 10px 0px;
+        }
 
-			.title-count span {
-				font-size: 2rem;
-				letter-spacing: 1rem;
-			}
-	}
-
-
-	@@media screen and (max-width: 930px) {
+            .title-count span {
+                font-size: 2rem;
+                letter-spacing: 1rem;
+            }
+    }
 
 
-
-		.footer-layout1 {
-			display: none !important;
-		}
-	}
+    @@media screen and (max-width: 930px) {
 
 
-	.card-header, .totalCardBody {
-		color: #e7272d;
-		background-color: var(--smoke-color2);
-	}
 
+        .footer-layout1 {
+            display: none !important;
+        }
+    }
+
+
+    .card-header, .totalCardBody {
+        color: #e7272d;
+        background-color: var(--smoke-color2);
+    }
 </style>
 
 
@@ -167,313 +166,311 @@
  *@
 
 <div class="page-header-wrap bg-img" data-bg="/assets/img/bg/page-header-bg.jpg">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<div class="page-header-content">
-					<div class="page-header-content-inner">
-						<h1>Order Complete</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Order Complete</h1>
 
-						<ul class="breadcrumb">
-							<li><a href="/">Home</a></li>
-							<li><a href="checkout">Checkout</a></li>
-							<li class="current"><a href="Home/ConfirmOrder/id">Order Complete</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="checkout">Checkout</a></li>
+                            <li class="current"><a href="Home/ConfirmOrder/id">Order Complete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <section class="cart-section pt-100 pb-70 ">
 
-	<div class="container">
+    <div class="container">
 
-		<div class="row">
+        <div class="row">
 
-			<div class="col-sm-12">
-				<div class="card m-3">
-					<div class="card-body ">
-						<h3 class="text-white">Invoice Status</h3>
+            <div class="col-sm-12">
+                <div class="card m-3">
+                    <div class="card-body ">
+                        <h3 class="text-white">Invoice Status</h3>
 
-						<div class="row">
-							<div class="col-lg-2 col-sm-12">
-								<div class="card  cardactive-1">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-1" src="/assets/orderRecived.png" />
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card  cardactive-1">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-1" src="/assets/orderRecived.png" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order<br /> Recieved</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order<br /> Recieved</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-sm-12">
-								<div class="card cardactive-2">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-2" src="/assets/orderaccept.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card cardactive-2">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-2" src="/assets/orderaccept.jpg" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order<br />  Accept</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order<br />  Accept</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-sm-12">
-								<div class="card cardactive-3">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-3" src="/assets/orderpreparing.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card cardactive-3">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-3" src="/assets/orderpreparing.png" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order<br />  Preparing</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order<br />  Preparing</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-sm-12">
-								<div class="card cardactive-4 cardactive-5 cardactive-8">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-4 card-image-5 card-image-8" src="/assets/orderReady.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card cardactive-4 cardactive-5 cardactive-8">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-4 card-image-5 card-image-8" src="/assets/orderReady.jpg" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order<br />  Ready</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order<br />  Ready</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-sm-12">
-								<div class="card cardactive-6">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-6" src="/assets/orderdeliverd.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card cardactive-6">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-6" src="/assets/orderdeliverd.png" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order <br /> Delivered</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order <br /> Delivered</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-2 col-sm-12">
-								<div class="card cardactive-7">
-									<div class="card-body img-card-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<img class="card-image card-image-7" src="/assets/orderaccept.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-12">
+                                <div class="card cardactive-7">
+                                    <div class="card-body img-card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <img class="card-image card-image-7" src="/assets/orderaccept.jpg" />
 
-											</div>
-											<div class="col-sm-12 text-center ">
-												<h5>Order<br />  Cancel</h5>
+                                            </div>
+                                            <div class="col-sm-12 text-center ">
+                                                <h5>Order<br />  Cancel</h5>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-		</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-		@* <div class="row">
-			<div class="col-sm-12">
-				<div class="card m-3">
-					<div class="card-body ">
-						<div class="overlay"></div>
-						<div class="wrapper">
-							<div class="text-center ">
-								<h1 class="title-count text-pink-h1"><span>Your</span> order will be prepared in </h1>
-								<div class="countdown-container">
-
-									<div>
-										<p id="hours" class="big-text">0</p>
-										<span class="text-pink">Hours</span>
-									</div>
-									<div>
-										<p id="min" class="big-text">0</p>
-										<span class="text-pink">Min</span>
-									</div>
-									<div>
-										<p id="sec" class="big-text">0</p>
-										<span class="text-pink">Sec</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div> *@
+        </div>
 
 
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="card m-3 ">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="row">
-											<div class="col-lg-12">
+        @* <div class="row">
+        <div class="col-sm-12">
+        <div class="card m-3">
+        <div class="card-body ">
+        <div class="overlay"></div>
+        <div class="wrapper">
+        <div class="text-center ">
+        <h1 class="title-count text-pink-h1"><span>Your</span> order will be prepared in </h1>
+        <div class="countdown-container">
 
-												<div class="card ">
-													<div class="card-header">
-														<div class="row">
-															<div class="col-lg-4 ">
-																Invoice # <strong><span id="spnInvoiceNo"></span> </strong>
-															</div>
-															<div class="col-lg-4 text-center">Invoice Date <strong><span id="spnInvoiceDate"></span></strong></div>
-															<div class="col-lg-4  align-content-end">
-																<span class="float-right align-content-end float-right">
-																	<strong>Status:</strong> <span id="spnInvoiceStatus"></span>
-																</span>
-															</div>
-														</div>
+        <div>
+        <p id="hours" class="big-text">0</p>
+        <span class="text-pink">Hours</span>
+        </div>
+        <div>
+        <p id="min" class="big-text">0</p>
+        <span class="text-pink">Min</span>
+        </div>
+        <div>
+        <p id="sec" class="big-text">0</p>
+        <span class="text-pink">Sec</span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
 
-													</div>
-													<div class="card-body">
-														<div class="row mb-5">
-															<div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12">
-																<h6>From:</h6>
-																<div> <strong>AutoPartsHub</strong> </div>
-																<div>
-																	Pakistan: Peshawar
-																</div>
-																<div>Email: mailto:info@autopartshub.com</div>
-																<div>Phone:+92 3369440406</div>
-															</div>
-															<div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"></div>
-															<div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 float-right">
-																<h6>To:</h6>
-																<div>
-																	<!-- Display the recipient's name -->
-																	@Model.TblOrdersMain.User.UserName <strong><span></span></strong>
-																</div>
-																<div>
-																	Email: @Model.TblOrdersMain.User.Email <span></span>
-																</div>
-																<div>
-																	Phone: @Model.TblOrdersMain.PhoneNo <span></span>
-																</div>
-																<div>
-																	Paid Amount: @Model.TblOrdersMain.PaidAmount <span></span>
-																</div>
-																<div>
-																	Payment Type: @Model.TblOrdersMain.PaymentType <span></span>
-																</div>
-																<div>
-																	Delivery Address: @Model.TblOrdersMain.DeliveryAddress <span></span>
-																</div>
-																<div>
-																	City: @Model.TblOrdersMain.City.CityName <span></span>
-																</div>
-															</div>
-
-														</div>
-														<div class="cart_table table-responsive  ">
-															<table class="cart_table table ">
-																<thead>
-																	<tr>
-																		<th class="center">#</th>
-																		<th class="cart-col-image">Image</th>
-																		<th class="cart-col-productname">Product Name</th>
-																		<th class="cart-col-price">Price</th>
-																		<th class="cart-col-quantity">Quantity</th>
-																		<th class="cart-col-total">Total</th>
-																	</tr>
-																</thead>
-																<tbody >
-																	@{
-																		int serialNumber = 1; // Initialize the serial number counter
-																	}
-
-																	@foreach (var item in Model.OrderDetail)
-																	{
-																		<tr>
-																			<td>@serialNumber</td> <!-- Display the serial number -->
-																			<td><img src="@item.Item.TblItemImages.FirstOrDefault(x=>x.IsDefault).NormalImage" class="img-responsive w-25" alt="Alternate Text" /></td>
-																			<td>@item.Item.ItemName</td>
-																			<td>@item.ItemAmount</td>
-																			<td>@item.ItemQuantity</td>
-																			<td>@item.TotelAmount</td>
-																		</tr>
-
-																		serialNumber++; // Increment the serial number
-																	}
-
-																</tbody>
-															</table>
-														</div>
-														<div class="row">
-															<div class="col-lg-4 col-sm-5"> </div>
-															<div class="col-lg-4 col-sm-5 ms-auto">
-																<table class="table table-clear">
-																	<tbody class="totalCardBody ">
-																		<tr>
-																			<td class="left"><strong>Subtotal</strong></td>
-																			<td class="right"><span>@Model.TblOrdersMain.GrandTotal</span></td>
-																		</tr>
-																		<tr>
-																			<td class="left"><strong>Delivery Charges </strong></td>
-																			<td class="right"><span >@Model.TblOrdersMain.ShippingAmount</span></td>
-																		</tr>
-
-																		<tr>
-																			<td class="left"><strong>Total</strong></td>
-																			<td class="right">
-																				<strong><span>@Model.TblOrdersMain.PaidAmount</span></strong>
-
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        </div>
+        </div> *@
 
 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card m-3 ">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+
+                                                <div class="card ">
+                                                    <div class="card-header">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 ">
+                                                                Invoice # <strong><span id="spnInvoiceNo"></span> </strong>
+                                                            </div>
+                                                            <div class="col-lg-4 text-center">Invoice Date <strong><span id="spnInvoiceDate"></span></strong></div>
+                                                            <div class="col-lg-4  align-content-end">
+                                                                <span class="float-right align-content-end float-right">
+                                                                    <strong>Status:</strong> <span id="spnInvoiceStatus"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row mb-5">
+                                                            <div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                                                                <h6>From:</h6>
+                                                                <div> <strong>AutoPartsHub</strong> </div>
+                                                                <div>
+                                                                    Pakistan: Peshawar
+                                                                </div>
+                                                                <div>Email: mailto:info@autopartshub.com</div>
+                                                                <div>Phone:+92 3369440406</div>
+                                                            </div>
+                                                            <div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"></div>
+                                                            <div class="mt-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 float-right">
+                                                                <h6>To:</h6>
+                                                                <div>
+                                                                    <!-- Display the recipient's name -->
+                                                                    @Model.TblOrdersMain.User.UserName <strong><span></span></strong>
+                                                                </div>
+                                                                <div>
+                                                                    Email: @Model.TblOrdersMain.User.Email <span></span>
+                                                                </div>
+                                                                <div>
+                                                                    Phone: @Model.TblOrdersMain.PhoneNo <span></span>
+                                                                </div>
+                                                                <div>
+                                                                    Paid Amount: @Model.TblOrdersMain.PaidAmount <span></span>
+                                                                </div>
+                                                                <div>
+                                                                    Payment Type: @Model.TblOrdersMain.PaymentType <span></span>
+                                                                </div>
+                                                                <div>
+                                                                    Delivery Address: @Model.TblOrdersMain.DeliveryAddress <span></span>
+                                                                </div>
+                                                                <div>
+                                                                    City: @Model.TblOrdersMain.City.CityName <span></span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="cart_table table-responsive  ">
+                                                            <table class="cart_table table ">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="center">#</th>
+                                                                        <th class="cart-col-image">Image</th>
+                                                                        <th class="cart-col-productname">Product Name</th>
+                                                                        <th class="cart-col-price">Price</th>
+                                                                        <th class="cart-col-quantity">Quantity</th>
+                                                                        <th class="cart-col-total">Total</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @{
+                                                                        int serialNumber = 1; // Initialize the serial number counter
+                                                                    }
+
+                                                                    @foreach (var item in Model.OrderDetail)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@serialNumber</td> <!-- Display the serial number -->
+                                                                            <td><img src="@item.Item.TblItemImages.FirstOrDefault(x=>x.IsDefault).NormalImage" class="img-responsive w-25" alt="Alternate Text" /></td>
+                                                                            <td>@item.Item.ItemName</td>
+                                                                            <td>@item.ItemAmount</td>
+                                                                            <td>@item.ItemQuantity</td>
+                                                                            <td>@item.TotelAmount</td>
+                                                                        </tr>
+
+                                                                        serialNumber++; // Increment the serial number
+                                                                    }
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-sm-5"> </div>
+                                                            <div class="col-lg-4 col-sm-5 ms-auto">
+                                                                <table class="table table-clear">
+                                                                    <tbody class="totalCardBody ">
+                                                                        <tr>
+                                                                            <td class="left"><strong>Subtotal</strong></td>
+                                                                            <td class="right"><span>@Model.TblOrdersMain.GrandTotal</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="left"><strong>Delivery Charges </strong></td>
+                                                                            <td class="right"><span>@Model.TblOrdersMain.ShippingAmount</span></td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td class="left"><strong>Total</strong></td>
+                                                                            <td class="right">
+                                                                                <strong><span>@Model.TblOrdersMain.PaidAmount</span></strong>
+
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -483,7 +480,9 @@
 
 
 
-	</div>
+
+
+    </div>
 
 </section>
 
@@ -492,173 +491,173 @@
 
 @section Scripts {
 
-	<script type="text/javascript">
-		var TimerIntervalCount;
+    <script type="text/javascript">
+        var TimerIntervalCount;
 
-		$(document).ready(function () {
-
-
-
-			LoadInvoiceData();
-		});
-
-
-		function LoadInvoiceData() {
+        $(document).ready(function () {
 
 
 
-			$.ajax({
-				method: "Get",
-				url: "/home/CustomerInvoice/@Model",
-				processData: false,
-				contentType: false,
-				dataType: "json",
-				success: function (result) {
-					if (result.code === -1) {
-
-						window.location.href = "/";
-					}
-
-					if (result.success) {
-						clearInterval(TimerIntervalCount);
-						SetClockTimer(result.invoiceMain.deliveryDate);
-						$("#spnInvoiceNo").html(result.invoiceMain.orderNo);
-						$("#spnInvoiceDate").html(result.invoiceMain.systime2);
-						$("#spnInvoiceStatus").html(result.invoiceMain.orderStatus);
-						$("#spnInvoiceUser").html(' ' + result.invoiceMain.userName);
-						if (result.invoiceMain.deliveryType === "delivery") {
-							$("#spnInvoiceAddress").html('Location: ' + result.invoiceMain.deliveryLocation);
-							$("#spnInvoiceTown").html('Eir Code: ' + result.invoiceMain.postalCode);
-						}
-						$("#spnInvoiceEmail").html(': ' + result.invoiceMain.email);
-						$("#spnInvoicePhone").html(': ' + result.invoiceMain.contactNo);
-						$("#spnInvoiceSubTotal").html('€ ' + result.invoiceMain.totalAmount);
-						$("#spnInvoiceDelivery").html('€ ' + result.invoiceMain.deliveryCharges);
-						$("#spnInvoiceGrandTotal").html('€ ' + result.invoiceMain.grandTotal);
-						$("#spnInvoicePayment").html(':  ' + result.invoiceMain.paymentType);
-						$("#spnInvoiceType").html(': ' + result.invoiceMain.deliveryType);
+            LoadInvoiceData();
+        });
 
 
-						$(".card-image-" + result.invoiceMain.statusId).attr("src", "/images/Order-" + result.invoiceMain.statusId + ".gif")
-						$(".card").removeClass("cardactive");
-						$(".cardactive-" + result.invoiceMain.statusId).addClass("cardactive");
-						console.log(result);
-						var html = '';
-
-						console.log("---------------------Waqar Ahmad----------------");
-						console.log(result.invoiceDetail);
-
-						$.each(result.invoiceDetail, function (key, item) {
-
-
-							html += '<tr class="cart_item">';
-							html += '<td>' + (key + 1) + '</td>';
-
-							html += ' <td data-title="Product">';
-							html += ' <div class="product-table-info">';
-							html += ' <div class="product-table-thumb">';
-
-							// html += '<img  src="' + item.itemImage + '" alt="Image">';
-							html += '<img  src="../../newassets/assets/images/Default.png" alt="Image">';
-							html += '</div>';
-							html += '</div>';
-							html += '</td>';
-							html += '<td data-title="Name"><h5>' + item.itemName + '<span class="pl-3 colororange">' + item.mainItemPrice.toFixed(2) + '</h5>';
-							$.each(item.subItems, function (key, subIt) {
-								html += '<p><span>' + subIt.subItemTitle + '</span><span class="pl-3 colororange">+' + subIt.subItemPrice.toFixed(2) + '</span></p>';
-							});
-
-
-							html += '</td>';
-							html += '<td data-title="Name">' + item.price + '</td>';
-							html += '<td data-title="Name">' + item.quantity + '</td>';
-							html += '<td data-title="Name">' + item.totalPrice + '</td>';
-
-
-							html += '</tr>';
-
-
-						});
-
-						$("#tblInvoiceTBody").html(html);
-					}
-
-				},
-				error: function (errorText) {
-
-				}
-			});
-		}
-
-		$(function () {
-
-			setInterval(function () {
-				LoadInvoiceData();
-			}, 30000);
-		});
+        function LoadInvoiceData() {
 
 
 
+            $.ajax({
+                method: "Get",
+                url: "/home/CustomerInvoice/@Model",
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function (result) {
+                    if (result.code === -1) {
+
+                        window.location.href = "/";
+                    }
+
+                    if (result.success) {
+                        clearInterval(TimerIntervalCount);
+                        SetClockTimer(result.invoiceMain.deliveryDate);
+                        $("#spnInvoiceNo").html(result.invoiceMain.orderNo);
+                        $("#spnInvoiceDate").html(result.invoiceMain.systime2);
+                        $("#spnInvoiceStatus").html(result.invoiceMain.orderStatus);
+                        $("#spnInvoiceUser").html(' ' + result.invoiceMain.userName);
+                        if (result.invoiceMain.deliveryType === "delivery") {
+                            $("#spnInvoiceAddress").html('Location: ' + result.invoiceMain.deliveryLocation);
+                            $("#spnInvoiceTown").html('Eir Code: ' + result.invoiceMain.postalCode);
+                        }
+                        $("#spnInvoiceEmail").html(': ' + result.invoiceMain.email);
+                        $("#spnInvoicePhone").html(': ' + result.invoiceMain.contactNo);
+                        $("#spnInvoiceSubTotal").html('€ ' + result.invoiceMain.totalAmount);
+                        $("#spnInvoiceDelivery").html('€ ' + result.invoiceMain.deliveryCharges);
+                        $("#spnInvoiceGrandTotal").html('€ ' + result.invoiceMain.grandTotal);
+                        $("#spnInvoicePayment").html(':  ' + result.invoiceMain.paymentType);
+                        $("#spnInvoiceType").html(': ' + result.invoiceMain.deliveryType);
 
 
-		function SetClockTimer(dateTimer) {
-			console.log('test');
-			let hoursItem = document.querySelector("#hours");
-			let minItem = document.querySelector("#min");
-			let secItem = document.querySelector("#sec");
+                        $(".card-image-" + result.invoiceMain.statusId).attr("src", "/images/Order-" + result.invoiceMain.statusId + ".gif")
+                        $(".card").removeClass("cardactive");
+                        $(".cardactive-" + result.invoiceMain.statusId).addClass("cardactive");
+                        console.log(result);
+                        var html = '';
 
-			console.log(hoursItem);
-			console.log(minItem);
-			console.log(secItem);
+                        console.log("---------------------Hamza Zia----------------");
+                        console.log(result.invoiceDetail);
 
-
-
-			let countDown = () => {
-				let futureDate = new Date(dateTimer).;
-
-				const currentDate = new Date();
+                        $.each(result.invoiceDetail, function (key, item) {
 
 
+                            html += '<tr class="cart_item">';
+                            html += '<td>' + (key + 1) + '</td>';
 
-				let myDate = futureDate - currentDate;
+                            html += ' <td data-title="Product">';
+                            html += ' <div class="product-table-info">';
+                            html += ' <div class="product-table-thumb">';
 
-				console.log("------------ Order Date----------------");
-				console.log(dateTimer);
-				console.log(futureDate);
-				console.log("------------ System Date----------------");
-				console.log(currentDate)
-
-				console.log("------------ Difference Date----------------");
-
-				console.log(myDate);
-
-
-
-				let hours = Math.floor(myDate / 1000 / 60 / 60) % 24;
-
-				let min = Math.floor(myDate / 1000 / 60) % 60;
-
-				let sec = Math.floor(myDate / 1000) % 60;
+                            // html += '<img  src="' + item.itemImage + '" alt="Image">';
+                            html += '<img  src="../../newassets/assets/images/Default.png" alt="Image">';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</td>';
+                            html += '<td data-title="Name"><h5>' + item.itemName + '<span class="pl-3 colororange">' + item.mainItemPrice.toFixed(2) + '</h5>';
+                            $.each(item.subItems, function (key, subIt) {
+                                html += '<p><span>' + subIt.subItemTitle + '</span><span class="pl-3 colororange">+' + subIt.subItemPrice.toFixed(2) + '</span></p>';
+                            });
 
 
-				console.log(hours);
-				console.log(min);
-				console.log(sec);
-				hoursItem.innerHTML = hours;
-				minItem.innerHTML = min;
-				secItem.innerHTML = sec;
-			}
+                            html += '</td>';
+                            html += '<td data-title="Name">' + item.price + '</td>';
+                            html += '<td data-title="Name">' + item.quantity + '</td>';
+                            html += '<td data-title="Name">' + item.totalPrice + '</td>';
 
-			countDown()
 
-			TimerIntervalCount = setInterval(countDown, 1000)
+                            html += '</tr>';
 
-		}
+
+                        });
+
+                        $("#tblInvoiceTBody").html(html);
+                    }
+
+                },
+                error: function (errorText) {
+
+                }
+            });
+        }
+
+        $(function () {
+
+            setInterval(function () {
+                LoadInvoiceData();
+            }, 30000);
+        });
 
 
 
 
-	</script>
+
+        function SetClockTimer(dateTimer) {
+            console.log('test');
+            let hoursItem = document.querySelector("#hours");
+            let minItem = document.querySelector("#min");
+            let secItem = document.querySelector("#sec");
+
+            console.log(hoursItem);
+            console.log(minItem);
+            console.log(secItem);
+
+
+
+            let countDown = () => {
+                let futureDate = new Date(dateTimer).;
+
+                const currentDate = new Date();
+
+
+
+                let myDate = futureDate - currentDate;
+
+                console.log("------------ Order Date----------------");
+                console.log(dateTimer);
+                console.log(futureDate);
+                console.log("------------ System Date----------------");
+                console.log(currentDate)
+
+                console.log("------------ Difference Date----------------");
+
+                console.log(myDate);
+
+
+
+                let hours = Math.floor(myDate / 1000 / 60 / 60) % 24;
+
+                let min = Math.floor(myDate / 1000 / 60) % 60;
+
+                let sec = Math.floor(myDate / 1000) % 60;
+
+
+                console.log(hours);
+                console.log(min);
+                console.log(sec);
+                hoursItem.innerHTML = hours;
+                minItem.innerHTML = min;
+                secItem.innerHTML = sec;
+            }
+
+            countDown()
+
+            TimerIntervalCount = setInterval(countDown, 1000)
+
+        }
+
+
+
+
+    </script>
 }
 
 

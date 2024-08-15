@@ -60,14 +60,13 @@ namespace AutoPartsHub.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemCategoryId,CategoryId,ItemId,CreatedAt,CreatedBy,UpdatedAt,UpdatedBy,MDelete")] TblItemCategory tblItemCategory)
+        public async Task<IActionResult> Create([Bind("CategoryId,ItemId,CategoryName,ItemName")] TblItemCategory tblItemCategory)
         {
-            if (ModelState.IsValid)
-            {
+           
                 _context.Add(tblItemCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+   
             ViewData["CategoryId"] = new SelectList(_context.TblCategories, "CategoryId", "CategoryName", tblItemCategory.CategoryId);
             ViewData["ItemId"] = new SelectList(_context.TblItems, "ItemId", "ItemName", tblItemCategory.ItemId);
             return View(tblItemCategory);

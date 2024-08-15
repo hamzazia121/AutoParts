@@ -60,11 +60,11 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.IsDefault)
                                     </td>
-                                    <td style="display:flex;margin-left: 30px !important ">
+                                    <td style="display:flex;justify-content:center; !important ">
                                         <a asp-action="Edit" class="btn btn-sm m-2 btn-primary" asp-route-id="@item.ItemSizeId"><i class="fa fa-edit"></i></a>
-                                        <form asp-action="Delete" method="post" class="deleteForm">
+                                        <form asp-action="Delete" method="post" class="deleteForm m-2">
                                             <input type="hidden" name="id" value="@item.ItemSizeId" asp-for="@item.ItemSizeId" />
-                                            <button type="submit" class="btn btn-danger btn-sm m-2"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger btn-sm "><i class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
