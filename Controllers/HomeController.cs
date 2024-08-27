@@ -103,7 +103,7 @@ namespace AutoPartsHub.Controllers
 
 
 
-	[Route("gallery")]
+        //[Route("gallery")]
         public IActionResult Gallery()
         {
             return View();
@@ -707,7 +707,6 @@ namespace AutoPartsHub.Controllers
         }
 
 
-        [Route("/addToWishList")]
         [HttpPost]
         public IActionResult WishList(int itemId, int quantity)
         {

@@ -266,7 +266,7 @@
                 var quantity = 1;
                 $.ajax({
                     type: 'POST',
-                    url: "/addToWishList",
+                    url: '/Home/WishList',
                     data: { itemId: itemId, quantity: quantity },
                     success: function (response) {
                         if (response.success) {

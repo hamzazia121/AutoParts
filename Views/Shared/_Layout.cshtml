@@ -76,7 +76,7 @@
                             <li><a asp-controller="Home" asp-action="Blog">Blogs</a></li>
 
 
-                            <li><a href="gallery">Gallery</a></li>
+                            <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
                           @*   @if (User.IsInRole("Admin") || User.IsInRole("Customer"))
                             {
 
@@ -89,7 +89,7 @@
                                     </ul>
                                 </li>
                             } *@
-                                        <li><a href="wishList">Wishlist</a></li>
+                            <li><a asp-controller="Home" asp-action="WishList">Wishlist</a></li>
                             <li><a asp-controller="Home" asp-action="ContactUS">Contact US</a></li>
                         </ul>
                     </div>
@@ -254,7 +254,7 @@
                                 </script>
                                 .
                                 Made With <i class="fa fa-heart text-danger"></i> by
-                                <a href="http://hasthemes.com/" target="_blank">HubSolution</a>
+                                <a href="#" target="_blank">HubSolution</a>
                             </p>
                         </div>
                     </div>
